@@ -1,32 +1,36 @@
 #include <iostream>
 #include <algorithm>
-#include <cstdio>
-#include <cstdlib>
-#define N 100005
 using namespace std;
-int size[N];
-int cmp(const void *a,const void *b)	{
-	return *(int*)b-*(int*)a;
-}
+typedef struct point{
+	int r,c;
+}point;
 int main()	{
-	int n,a,b,sum=0;
-	scanf("%d %d %d",&n,&a,&b);
-	for (int i=0;i<n;i++)	{
-		scanf("%d",&size[i]);
-		sum+=size[i];
-	}
-	int first=size[0];
-	size[0]=0;
-	qsort(size,n,sizeof(int),cmp);
-	for (int i=0;i<n;i++)	{
-		if (i==0&&1.0*first/sum*a*100>=b*100){
-			printf("0\n");break;
+	int n,m,cnt,jud,flag=0;
+	long long k;
+	point now;
+	now.r=1,now.c=1;
+	cin >> n >> m >> k;
+	for (int i=1;i<=k;i++)	{
+		if (i<n)	{
+			now.r=now.r+1;
+			now.c=now.c;
 		}
-		if (1.0*first/(sum-=size[i])*a*100>=b*100)	{
-			printf("%d\n",i+1);
-			break;
+		else if (i==n)	now.c=now.c+1;
+		else {
+			cnt=i-n;
+			jud=cnt%(m-1);
+			if (jud!=0&&flag==0)	{
+				now.c=now.c+1;
+			}
+			else if (jud!=0&&flag==1)	{
+				now.c=now.c-1;
+			}
+			else if (jud==0)	{
+				now.r=now.r-1;
+				flag=!flag;
+			}
 		}
-		//sum-=size[i];
 	}
+	printf("%d %d\n",now.r,now.c);
 	return 0;
 }
