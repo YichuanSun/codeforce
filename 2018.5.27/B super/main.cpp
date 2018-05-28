@@ -21,7 +21,7 @@ int main()
     long long ans = 0;
     for (auto &p : mp)
     {
-        ans += p.first;
+        ans += p.second;
     }
     cout << ans << '\n';
     return 0;
