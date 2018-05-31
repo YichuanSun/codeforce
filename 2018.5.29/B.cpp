@@ -10,7 +10,9 @@ int main()	{
 		return 0;
 	}
 	double xx=1.0*x,yy=1.0*y;
-	if (fabs(xx-yy)<=1e-9)	cout <<'='<<endl;
+	//cout << xx*log10(yy) <<endl;
+	//cout << yy*log10(xx) <<endl;
+	if (fabs(xx*log10(yy)-yy*log10(xx))<=1e-4)	cout <<'='<<endl;
 	else if (xx*log10(yy)-yy*log10(xx)>0)	cout <<'<'<<endl;
 	else	cout <<'>'<<endl;
 	return 0;
