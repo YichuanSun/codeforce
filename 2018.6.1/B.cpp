@@ -22,7 +22,7 @@ int main()	{
 	}
 	return 0;
 }
-bool search(string a,int i)	{
+void search(string a,int i)	{
 	const char *show;
 	for (int c=0;c<n;c++)	{
 		if (c==i)	continue;
@@ -30,6 +30,6 @@ bool search(string a,int i)	{
 			search(a,show);
 			break;
 		}
+		else	s.push(a[i]);
 	}
-	
 }
