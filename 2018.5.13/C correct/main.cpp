@@ -1,20 +1,18 @@
 #include <bits/stdc++.h>
-
 using namespace std;
-
-#define sz(a) int(a.size())
-
 int main () {
+    ios::sync_with_stdio(false);
+    cin.tie(0),cout.tie(0);
 	int n, m;
-	scanf("%d%d",&n,&m);
+	cin>>n>>m;
 	vector <long long> a (n);
-	for (long long &t : a) scanf("%I64d",&t);
+	for (long long &t : a) cin>>t;
 	int f = 0;
 	long long ac = 0;
 	while (m--) {
 		long long x;
-		scanf("%I64d",&x);
+		cin>>x;
 		while (ac + a[f] < x) ac += a[f++];
-		printf("%d %I64d\n",f+1,x-ac);
+		cout<<f+1<<" "<<x-ac<<endl;
 	}
 }
