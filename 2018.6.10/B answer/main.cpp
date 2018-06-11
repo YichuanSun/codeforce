@@ -12,11 +12,11 @@ int main()
 	for (int i = 0; i < n; i++)
 		scanf("%d", &a[i]);
 	sort(a, a + n);
-	vector <int> S;
+	stack <int> S;
 	for (int i = 0; i < n; i++) {
-		while (!S.empty()&&S.back()<a[i]&&a[i]<=S.back()+k)
-			S.pop_back();
-		S.push_back(a[i]);
+		while (!S.empty()&&S.top()<a[i]&&a[i]<=S.top()+k)
+			S.pop();
+		S.push(a[i]);
 	}
 	printf("%d\n", int(S.size()));
 	return 0;
