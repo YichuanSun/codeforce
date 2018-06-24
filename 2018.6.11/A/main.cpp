@@ -11,7 +11,6 @@ int main()  {
     }
     for (int i=0;i<s.size()-2;i++)   {
         if (s[i]+s[i+1]+s[i+2]=='A'+'B'+'C'&&s[i]!=s[i+2])    {
-            cout<<s[i]<<s[i+1]<<s[i+2]<<endl;
             cout<<"Yes\n";
             return 0;
         }
