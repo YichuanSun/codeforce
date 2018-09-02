@@ -1,46 +1,27 @@
-#include <Bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-typedef long long ll;
-int main()
-{
-	int n, k;
-	cin >> n >> k;
-	string s;
-	cin >> s;
-	for (int l = n - 1; l > 0; --l) {
-        cout<<n-l<<'\t'<<s.substr(n - l);
-        cout<<'\t'<<s.substr(0,l)<<endl;
-		if (s.substr(n - l) == s.substr(0, l)) {
-			cout << s;
-			while (--k)
-				cout << s.substr(l);
-			return 0;
-		}
-	}
-	while (k--)
-		cout << s;
-	return 0;
+
+int main()  {
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    string a,b,c;
+    int n,k,i;
+    cin>>n>>k>>a;
+    for (i=n-1;i>=0;i--) {
+        b=a.substr(n-i);
+        c=a.substr(0,i);
+        if (b==c)   {
+            cout<<a;
+            while (--k) cout<<a.substr(i);
+            cout<<endl;
+            return 0;
+        }
+    }
+    while (k--)
+        cout<<a;
+    cout<<endl;
+    return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //我这个算法有问题，根本上就不行，
 //不能处理部分对称的情况
 //错误用例：abba、ddddaadd、ddaadd
