@@ -10,7 +10,8 @@ bool cmp(ll a,ll b)   {
 int main()  {
     int n;
     cin>>n;
-    int asum=0,bsum=0,cnt=0;
+    int cnt=0;
+    ll asum=0,bsum=0;
     for (int i=0;i<n;i++)   cin>>a[i];
     for (int i=0;i<n;i++)   cin>>b[i];
     sort(a,a+n,cmp);
