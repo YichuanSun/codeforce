@@ -21,8 +21,6 @@ int main() {
 		a.push_back({c,i});
 	}
 	sort(all(a));
-	for (int i=0;i<a.size();i++)
-        cout<<a[i].first<<' '<<a[i].second<<endl;
 	for(int i=1; i<=m; i++) sort(all(b[i]));
 	ll res = 9e18;
 	for(int i=max(init,1); i<=n; i++) {
