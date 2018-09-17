@@ -10,7 +10,9 @@ int main()  {
         if (t>mx)   mx=t;
     }
     int tot=m+sum;
-    if (tot%n==0)   ansmi=tot/n;
+    int thd=mx*n;
+    if (m<=thd-sum)  ansmi=mx;
+    else if (tot%n==0)   ansmi=tot/n;
     else    ansmi=tot/n+1;
     ansmx=mx+m;
     printf("%d %d\n",ansmi,ansmx);
