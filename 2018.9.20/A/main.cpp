@@ -24,16 +24,20 @@ void solve(string s)   {
         else if (s[i]>='0'&&s[i]<='9')  spot[2]++;
     }
     for (int i=0;i<3;i++)   sum+=spot[i]?1:0;
+//    for (int i=0;i<3;i++)   cout<<spot[i]<<' ';
+//    cout<<endl;
     if (sum==2) {
         int mxi=0,mii=0;
         if (spot[0]>spot[1])    {
             if (spot[0]>spot[2])    mxi=0;
+            else mxi=2;     //第一次写时这句话没有,就WA了
         }
         else {
             if (spot[1]>spot[2])    mxi=1;
             else    mxi=2;
         }
         for (int i=0;i<3;i++)   if (spot[i]==0) mii=i;
+        //cout<<mxi<<' '<<mii<<endl;
         if (mxi==0)  {
             for (int i=0;i<(int)s.size();i++)   {
                 if (s[i]>='A'&&s[i]<='Z')   {
