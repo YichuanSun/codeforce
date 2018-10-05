@@ -24,7 +24,7 @@ int main()  {
     for (int i=1;i<=m;i++)  {
         ll c=x/ma[i];
         int p1=1,p2=n,f=0;
-        while (p1<p2)   {
+        while (p1<p2)   {       //用双指针法，则无法遍历所有的可能的区间值，就是说b[p2]-b[p1]不会包括所有的部分和值，也就错了
             if (c<b[p2]-b[p1])  p1++;
             else if (c>b[p2]-b[p1]) p2--;
             else {f=1;break;}
