@@ -20,8 +20,9 @@ int main()  {
                 for (int dy=-1;dy<=1;dy++)  {
                     if (!dx&&!dy)   continue;
                     int x=i+dx,y=j+dy;
-                    if (s[x][y]=='.')   can[x][y]=false;
-                    if (s[x][y]=='#'&&inside(x,y)&&!inborden(x,y))    {
+                    if (!inside(x,y))   continue;
+                    if (s[i][j]=='.')   can[x][y]=false;
+                    else if (!inborden(x,y))    {
                         ii[i][j].push_back(x*m+y);
                     }
                 }
@@ -30,7 +31,8 @@ int main()  {
     }
     for (int i=0;i<n;i++)   {
         for (int j=0;j<m;j++)   {
-            int ok=false;
+            bool ok=false;
+            if (s[i][j]=='.')   continue;
             for (int k=0;k<(int)ii[i][j].size();k++)    {
                 int tt=ii[i][j][k];
                 int x=tt/m,y=tt%m;
@@ -50,7 +52,3 @@ bool inside(int x,int y)    {
 bool inborden(int x,int y) {
     return x==0||x==(n-1)||y==0||y==(m-1);
 }
-
-
-
-
