@@ -1,4 +1,4 @@
-//莫名其妙的RE，我也不知道为什么
+//莫名其妙的RE，我也不知道为什么，应该是哪个下标搞错了
 #include <bits/stdc++.h>
 #define N 1005
 using namespace std;
