@@ -10,6 +10,10 @@ int main()  {
         cout<<n<<' '<<n<<endl;
         return 0;
     }
+    if (m>=n-1) {
+        cout<<0<<' '<<0<<endl;
+        return 0;
+    }
     if (m>n/2)  mmn=0;
     else mmn=n-m*2;
     cout<<mmn<<' '<<mmx<<endl;
