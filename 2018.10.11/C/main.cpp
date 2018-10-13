@@ -25,7 +25,7 @@ int main()  {
 //    cout<<endl;
     int tmp=0,ans=0;
     for (int i=1;i<=mx;i++)   {
-        if (tmp>k)  ans++,tmp=b[i];
+        if (tmp+b[i]>k)  ans++,tmp=b[i];
         else tmp+=b[i];
     }
     cout<<ans+1<<endl;
