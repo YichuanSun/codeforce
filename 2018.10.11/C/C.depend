@@ -1,4 +1,7 @@
 # depslib dependency file v1.0
-1539274383 source:d:\code resourse\codeforces\2018.10.11\c\main.cpp
-	<bits/stdc++.h>
+1539400038 source:d:\code resourse\codeforces\2018.10.11\c\main.cpp
+	<iostream>
+	<cstdio>
+	<algorithm>
+	<cstring>
 
