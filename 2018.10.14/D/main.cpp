@@ -3,7 +3,7 @@
 using namespace std;
 char graph[N][N];
 bool visit[N][N];
-int n,m,r,c,x,y,ans;
+int n,m,r,c,x,y,ans,cnt=0;
 void dfs(int x,int y,int rt,int lt);
 int main()  {
     cin>>n>>m>>r>>c>>x>>y;
@@ -26,7 +26,17 @@ int main()  {
 void dfs(int x,int y,int lt,int rt)  {
     if (x<=0||x>n||y<=0||y>n)   return;
     if (visit[x][y]||graph[x][y]=='*')    return;
-    visit[x][y]=true;
+    //if (x!=r&&y!=c)
+    cout<<"Case:"<<cnt++<<endl;
+    cout<<endl;
+    for (int i=1;i<=n;i++)  {
+        for (int j=1;j<=m;j++)  {
+            if (visit[i][j])    cout<<'+';
+            else cout<<graph[i][j];
+        }
+        cout<<endl;
+    }
+        visit[x][y]=true;
     ans++;
     for (int dx=-1;dx<=1;dx++)  {
         if (lt) {
