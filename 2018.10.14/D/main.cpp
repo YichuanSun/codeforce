@@ -25,10 +25,10 @@ int main()  {
 //        if (ny+1<=m&&g[nx][ny+1]=='.'&&tn.y)   dq.push_front(node(nx,ny+1,tn.x,tn.y-1));
 //        if (nx-1>0&&g[nx-1][ny]=='.')   dq.push_front(node(nx-1,ny,tn.x,tn.y));
 //        if (nx+1<=n&&g[nx+1][ny]=='.')   dq.push_front(node(nx+1,ny,tn.x,tn.y));
-        if (nx-1>0&&g[nx-1][ny]=='.')   dq.push_front(node(nx-1,ny,tn.x,tn.y));
-        if (nx+1<=n&&g[nx+1][ny]=='.')   dq.push_front(node(nx+1,ny,tn.x,tn.y));
-        if (ny-1>0&&g[nx][ny-1]=='.'&&tn.x)    dq.push_back(node(nx,ny-1,tn.x-1,tn.y));
-        if (ny+1<=m&&g[nx][ny+1]=='.'&&tn.y)   dq.push_back(node(nx,ny+1,tn.x,tn.y-1));
+        if (nx-1>0&&nx-1<=n&&g[nx-1][ny]=='.')   dq.push_front(node(nx-1,ny,tn.x,tn.y));
+        if (nx+1>0&&nx+1<=n&&g[nx+1][ny]=='.')   dq.push_front(node(nx+1,ny,tn.x,tn.y));
+        if (ny-1>0&&ny-1<=m&&g[nx][ny-1]=='.'&&tn.x)    dq.push_back(node(nx,ny-1,tn.x-1,tn.y));
+        if (ny+1>0&&ny+1<=m&&g[nx][ny+1]=='.'&&tn.y)   dq.push_back(node(nx,ny+1,tn.x,tn.y-1));
     }
     cout<<ans<<endl;
     return 0;
