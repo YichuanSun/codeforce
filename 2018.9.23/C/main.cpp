@@ -1,3 +1,5 @@
+//15
+//333703919182090
 #include <bits/stdc++.h>
 #define N 205
 using namespace std;
@@ -12,7 +14,10 @@ int main()  {
     }
     if (b[n]==0)    {cout<<"YES"<<endl;return 0;}
     for (;a[n-1]=='0';n--);
-    for (int i=1;i<=9;i++)  {
+//    for (int i=0;i<=n;i++)  cout<<b[i]<<' ';
+//    cout<<endl;
+    for (int i=1;i<=1000;i++)  {
+        if (b[n]<=i)    continue;
         for (int k=1;k<=n;k++)  {
             if (b[k]%i==0)  c[k]=b[k]/i;
             else    c[k]=0;
