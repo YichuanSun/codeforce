@@ -19,6 +19,8 @@ int main()  {
     cin.tie(0);
     brute(0,0,0);
     v.push_back(1e18);
+    for (int i=10000;i<12001;i++)    cout<<v[i]<<' ';
+    cout<<endl;
     ll l,r;
     int n;
     cin>>n;
