@@ -5,6 +5,8 @@ int main()  {
     int a,b;
     cin>>a>>b;
     int n=sqrt(2.0*(a+b));
+    if (n*(n+1)/2>(a+b))    n--;
+    //cout<<"n=\t"<<n<<endl;
     for (int i=n;i>=1;i--)  {
         if (a>=i)   {a-=i;va.push_back(i);}
         else    vb.push_back(i);
