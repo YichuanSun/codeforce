@@ -1,22 +1,17 @@
 #include <bits/stdc++.h>
-#define N 10000000005
 using namespace std;
 typedef long long ll;
-ll st[N];
-ll fd_spd(ll n);
 int main()  {
-    ll n,cnt=0;
+    ll n;
     cin>>n;
-
-    while (n)   {
-        ll t=fd_spd(n);
-        n-=d;
-        cnt++;
+    if (n%2==0) {cout<<n/2<<endl;return 0;}
+    for (ll i=2;i*i<=n;i++) {
+        if (n%i==0) {
+            n-=i;
+            cout<<1+n/2<<endl;
+            return 0;
+        }
     }
-
+    cout<<1<<endl;
     return 0;
-}
-
-ll fd_spd(ll n) {
-
 }
