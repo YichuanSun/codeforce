@@ -12,7 +12,8 @@ int main()  {
     for (int i=1;i<n;i++)   {
         if (a[i]<a[i-1])    b[i]=b[i-1]-1;
         else if (a[i]>a[i-1])   b[i]=b[i-1]+1;
-        else {}
+        else    while ((b[i]=rand()%5)==b[i-1]);
+        if (b[i]<1||b[i]>5) {cout<<-1<<endl;return 0;}
     }
     for (int i=0;i<n;i++)
         cout<<b[i]<<(i==n-1?'\n':' ');
