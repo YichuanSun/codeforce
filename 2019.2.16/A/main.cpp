@@ -5,7 +5,7 @@ int main()  {
     int n,v,ans=0,pos=0;
     cin>>n>>v;
     if (n-1<=v) {
-        cout<<v<<endl;
+        cout<<n-1<<endl;
         return 0;
     }
     else    {
