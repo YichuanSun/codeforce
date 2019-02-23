@@ -22,20 +22,17 @@ int main()  {
         int prea=ps[i-1].first,preb=ps[i-1].second;
         int a=ps[i].first,b=ps[i].second;
         if (a>b)    {
-            if (b>=prea)    ans+=a-b+1;
-            else    {
-//                if (preb<prea)  ;
-//                else    ans+=b-preb+1;
+            if (b>=prea)    {
+                if (b>preb) ans+=a-b+1;
+                else    ans+=a-b;
             }
         }
         else    {
-            if (a>=preb)    ans+=b-a+1;
-            else {
-//                if (prea<preb)  ;
-//                else    ans+=
+            if (a>=preb)    {
+                if (a>prea) ans+=b-a+1;
+                else    ans+=b-a;
             }
         }
-        cout<<"i = "<<i<<' '<<ans<<endl;
     }
     cout<<ans<<endl;
     return 0;
