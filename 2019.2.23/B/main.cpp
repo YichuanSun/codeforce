@@ -12,12 +12,16 @@ int main()  {
     cin>>n;
     for (int i=0;i<n;im++,i++)   {
         cin>>ps[im].first>>ps[im].second;
-        if (ps[im].first==ps[im].second)  im--;
+        if ((i!=n-1)&&ps[im].first==ps[im].second)  im--;
     }
+    cout<<' '<<n<<endl;
     if (im==0||im==1)   {
         cout<<1+min(ps[0].first,ps[0].second)<<endl;
         return 0;
     }
+
+    for (int i=0;i<n;i++)
+        cout<<"i="<<i<<' '<<ps[i].first<<' '<<ps[i].second<<endl;
     for (int i=1;i<n;i++)   {
         int prea=ps[i-1].first,preb=ps[i-1].second;
         int a=ps[i].first,b=ps[i].second;
