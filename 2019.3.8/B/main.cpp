@@ -20,16 +20,18 @@ int main()  {
         else if (sv1[i]=='1'&&sv2[i]=='1')  {spt[i]=3;d.push_back(i+1);}
     }
     int az=a.size(),bz=b.size(),cz=c.size(),dz=d.size();
-    int k=dz-abs(bz-cz),ms=abs(bz-cz);
+    int k=dz-abs(bz-cz),ms=abs(bz-cz),avg2=n/2;
     cout<<az<<' '<<bz<<' '<<cz<<' '<<dz<<endl;
     cout<<k<<' '<<ms<<endl;
-    if (k>=0&&)   {
+    if (k>=0)   {
         if (bz<=cz) {
             if (cz>0)   {
                 cout<<c[0];
                 for (int i=1;i<cz;i++)
                     cout<<' '<<c[i];
-                cout<<endl;
+                int it1=0,it2=0;
+                while (it1<az&&(it1+cz<avg2))  cout<<' '<<a[it1++];
+                while (it2<)
             }
             else    {
                 if (dz>0)   {
