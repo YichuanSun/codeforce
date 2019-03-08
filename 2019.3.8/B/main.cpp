@@ -20,7 +20,7 @@ int main()  {
         else if (sv1[i]=='1'&&sv2[i]=='1')  {spt[i]=3;d.push_back(i+1);}
     }
     int az=a.size(),bz=b.size(),cz=c.size(),dz=d.size();
-    int k=dz-abs(bz-cz),ms=abs(bz-cz),avg2=n/2;
+    int k=dz-abs(bz-cz),ms=abs(bz-cz);
     cout<<az<<' '<<bz<<' '<<cz<<' '<<dz<<endl;
     cout<<k<<' '<<ms<<endl;
     if (k>=0)   {
@@ -29,9 +29,8 @@ int main()  {
                 cout<<c[0];
                 for (int i=1;i<cz;i++)
                     cout<<' '<<c[i];
-                int it1=0,it2=0;
-                while (it1<az&&(it1+cz<avg2))  cout<<' '<<a[it1++];
-                while (it2<)
+                for (int i=0;i<=(dz-ms)/2;i++)    cout<<' '<<d[i];
+                cout<<endl;
             }
             else    {
                 if (dz>0)   {
@@ -53,13 +52,13 @@ int main()  {
                 cout<<c[0];
                 for (int i=1;i<cz;i++)
                     cout<<' '<<c[i];
-                for (int i=0;i<ms;i++)
+                for (int i=0;i<=(dz+ms)/2;i++)
                     cout<<' '<<d[i];
                 cout<<endl;
             }
             else {
                 cout<<d[0];
-                for (int i=1;i<(dz+ms)/2;i++)
+                for (int i=1;i<=(dz+ms)/2;i++)
                     cout<<' '<<d[i];
                 cout<<endl;
             }
