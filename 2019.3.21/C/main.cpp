@@ -11,8 +11,8 @@ ll pw1,pw2;
 
 void dfs(int a);
 bool visited[N];
-int db(int a,int b)   {
-    int ans=1;
+ll db(int a,int b)   {
+    ll ans=1;
     while (b--) {
         ans*=a;
     }
@@ -33,8 +33,8 @@ int main()  {
         dfs(i);
         if (cnt==0)  continue;
         cot+=db(cnt,k);
-//        cout<<"now cnt=\t"<<cnt<<endl;
-//        cout<<i<<' '<<cot<<endl;
+        cout<<"now cnt=\t"<<cnt<<endl;
+        cout<<i<<' '<<cot<<endl;
     }
     for (int i=1;i<=n;i++)  {
         int spot=0;
@@ -45,10 +45,10 @@ int main()  {
     ll qq=db(n,k),qt=uncon;
     ll tans=qq-cot-qt;
     if (uncon==n)   tans=qq-n;
-//    cout<<"uncon=\t"<<uncon<<endl;
-//    cout<<"qq=\t"<<qq<<endl;
-//    cout<<"cot=\t"<<cot<<endl;
-//    cout<<"qt=\t"<<qt<<endl;
+    cout<<"uncon=\t"<<uncon<<endl;
+    cout<<"qq=\t"<<qq<<endl;
+    cout<<"cot=\t"<<cot<<endl;
+    cout<<"qt=\t"<<qt<<endl;
     cout<<tans<<endl;
     return 0;
 }
