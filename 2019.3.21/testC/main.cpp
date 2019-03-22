@@ -48,7 +48,7 @@ int main()  {
             if (vi[i][j].second==0) spot=1;
         if (spot==0)    uncon++;
     }
-    ll qq=dbpow(n,k,MOD);
+//    ll qq=dbpow(n,k,MOD);
 //    ll tans=qq-cot-uncon;
 //    if (uncon==n)   tans=qq-n;
 //    cout<<"uncon=\t"<<uncon<<endl;
