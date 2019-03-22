@@ -23,8 +23,8 @@ ll dbpow(int a,int b,int md)   {
 
 int main()  {
     int n,k,v1,v2,j,uncon=0;
-    ll cot=0;
     cin>>n>>k;
+    ll ans=dbpow(n,k,MOD);
     for (int i=0;i<n-1;i++) {
         cin>>v1>>v2>>j;
         vi[v1].push_back(mp(v2,j));
@@ -34,8 +34,11 @@ int main()  {
         cnt=0,fst=0;
         dfs(i);
         if (cnt==0)  continue;
-        cot+=dbpow(cnt,k,MOD);
-        cot%=MOD;
+        ans-=dbpow(cnt,k,MOD);
+        ans+=MOD;
+        ans%=MOD;
+//        cot+=dbpow(cnt,k,MOD);
+//        cot%=MOD;
 //        cout<<"now cnt=\t"<<cnt<<endl;
 //        cout<<i<<' '<<cot<<endl;
     }
@@ -45,14 +48,13 @@ int main()  {
             if (vi[i][j].second==0) spot=1;
         if (spot==0)    uncon++;
     }
-    ll qq=dbpow(n,k,MOD),qt=uncon;
-    ll tans=qq-cot-qt;
-    if (uncon==n)   tans=qq-n;
-    cout<<"uncon=\t"<<uncon<<endl;
-    cout<<"qq=\t"<<qq<<endl;
-    cout<<"cot=\t"<<cot<<endl;
-    cout<<"qt=\t"<<qt<<endl;
-    cout<<tans%MOD<<endl;
+    ll qq=dbpow(n,k,MOD);
+//    ll tans=qq-cot-uncon;
+//    if (uncon==n)   tans=qq-n;
+//    cout<<"uncon=\t"<<uncon<<endl;
+//    cout<<"qq=\t"<<qq<<endl;
+//    cout<<"qt=\t"<<uncon<<endl;
+    cout<<ans-uncon<<endl;
     return 0;
 }
 
