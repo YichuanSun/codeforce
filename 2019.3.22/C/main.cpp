@@ -28,13 +28,14 @@ int main(){
 	for(i=1;i<=n;i++)
 		scanf("%lld%lld",&num[i].se,&num[i].fi);
 	sort(num+1,num+n+1);
+	for (int i=1;i<=n;i++)
+        cout<<num[i].fi<<' '<<num[i].se<<endl;
 	for(i=n;i>=1;i--){
 		add(num[i].se);
 		ans=max(ans,sum*num[i].fi);
 	}
 	cout<<ans;
 }
-
 
 //#include<bits/stdc++.h>
 //#define MAXN 300005
